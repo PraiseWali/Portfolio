@@ -107,11 +107,24 @@
     font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(242,243,242,0.28);
     border:1px dashed rgba(242,243,242,0.16);padding:10px 18px;border-radius:2px;text-align:center;
   }
-  .hero-nametype{
-    position:absolute;left:-3vw;right:0;top:50%;transform:translateY(-50%);
+  .hero-marquee{
+    position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
+    overflow:hidden;width:100%;pointer-events:none;
+  }
+  .hero-marquee-track{
+    display:flex;width:max-content;
+    position:relative;left:0;
+  }
+  .hero-marquee-track span{
     font-size:clamp(72px,15.5vw,260px);font-weight:800;letter-spacing:-0.05em;
-    line-height:0.85;white-space:nowrap;color:#FFFFFF;opacity:0.94;
-    pointer-events:none;
+    line-height:0.85;white-space:nowrap;color:#FFFFFF;opacity:1;
+    padding-right:0.2em;
+    mix-blend-mode:difference;
+    background:none;
+  }
+  @keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
   }
   .hero-bottom{
     position:relative;z-index:3;width:100%;padding-bottom:44px;
@@ -580,10 +593,13 @@ function featureBlock(id){
 function renderHome(){
   return `
   <section class="hero" style="padding:0;">
-    <div class="hero-media">
-      <div class="hero-portrait-note">Your portrait goes here<br><span style="opacity:.7">replace .hero-media background</span></div>
-    </div>
-    <div class="hero-nametype">OKAEGBU-WALI</div>
+    <div class="hero-media"></div>
+    <div class="hero-marquee">
+  <div class="hero-marquee-track">
+    <span>OKAEGBU-WALI&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>OKAEGBU-WALI&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
     <div class="hero-bottom">
       <div class="wrap">
         <div class="hero-loc">Based in Lagos, Nigeria &nbsp;/&nbsp; Working remote, worldwide</div>
@@ -953,6 +969,31 @@ window.addEventListener('scroll', ()=>{
   document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 40);
 });
 render();
+
+let heroMarqueeRAF = null;
+function initMarquee(){
+  if(heroMarqueeRAF) cancelAnimationFrame(heroMarqueeRAF);
+  const track = document.querySelector('.hero-marquee-track');
+  if(!track) return;
+  const firstSpan = track.children[0];
+  if(!firstSpan) return;
+  const distance = firstSpan.offsetWidth;
+  let pos = 0;
+  const speed = distance / 24;
+  let last = null;
+  function step(ts){
+    if(last===null) last = ts;
+    const dt = (ts-last)/1000;
+    last = ts;
+    pos -= speed*dt;
+    if(pos <= -distance) pos += distance;
+    track.style.left = pos + 'px';
+    heroMarqueeRAF = requestAnimationFrame(step);
+  }
+  heroMarqueeRAF = requestAnimationFrame(step);
+}
+initMarquee();
+window.addEventListener('hashchange', function(){ setTimeout(initMarquee, 60); });
 </script>
 </body>
 </html>
