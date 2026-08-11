@@ -222,7 +222,6 @@
   }
   .card:hover .quote{opacity:1;transform:translateY(0);}
   .cmeta{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-faint);margin-bottom:9px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
-  .badge{background:var(--teal);color:#04120F;font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:100px;letter-spacing:0.1em;}
   .card h3{font-size:23px;font-weight:600;letter-spacing:-0.025em;display:flex;justify-content:space-between;align-items:center;gap:12px;}
   .card h3 .arw{color:var(--text-faint);font-size:16px;transition:transform .3s,color .3s;}
   .card:hover h3 .arw{transform:translate(4px,-4px);color:var(--teal);}
@@ -416,6 +415,7 @@
       <div>
         <div class="logo">Praise Okaegbu-Wali</div>
         <p>AI Product Designer and Creative Director. Lagos, Nigeria. Working remote, worldwide.</p>
+        <p><a href="mailto:praisehenry52@gmail.com">praisehenry52@gmail.com</a></p>
       </div>
       <div>
         <div class="foot-nav">
@@ -428,7 +428,6 @@
         <div class="foot-nav" style="margin-top:16px;color:var(--text-faint);">
           <a href="https://www.linkedin.com/in/praise-okaegbu-wali/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://medium.com/@praise.okaegbu_wali" target="_blank" rel="noopener">Medium</a>
-          <a href="mailto:praisehenry52@gmail.com">Email</a>
         </div>
       </div>
     </div>
@@ -441,8 +440,7 @@
 const projects = {
   ezra: {
     art:"art-ezra",
-    year:"2025 / AI PRODUCT DESIGN",
-    badge:null,
+    year:"2026 / AI PRODUCT DESIGN",
     title:"AI-Guided Learning Platform",
     thesis:"Building the research foundation that design, development, and evaluation all work against.",
     quote:"The framing was wrong. Catching it early changed how the whole product gets graded.",
@@ -468,8 +466,7 @@ const projects = {
   },
   appraised:{
     art:"art-appraised",
-    year:"2026 / AI PRODUCT DESIGN",
-    badge:"In Progress",
+    year:"2024–2026 / AI PRODUCT DESIGN",
     title:"AppraisED",
     thesis:"An AI-powered appraisal platform that turns annual reviews into continuous professional growth.",
     quote:"Scores made people compete. Growth bands made them improve.",
@@ -495,8 +492,7 @@ const projects = {
   },
   crm:{
     art:"art-crm",
-    year:"2025 / PRODUCT DESIGN",
-    badge:null,
+    year:"2026 / PRODUCT DESIGN",
     title:"Nonprofit CRM Replacement",
     thesis:"An AI-assisted research-to-prototype pipeline that cut design rework and got engineering building sooner.",
     quote:"A Gender filter with no Gender field is a bug waiting to ship.",
@@ -520,9 +516,8 @@ const projects = {
   },
   video:{
     art:"art-video",
-    year:"2024 / CREATIVE DIRECTION",
-    badge:null,
-    title:"Repositioning a Video Production Studio",
+    year:"2026 / CREATIVE DIRECTION",
+    title:"Open Gate",
     thesis:"A website that never feels like a production company trying to look expensive.",
     quote:"Lead with the work that pays the bills. Let the brand grow toward the work you want next.",
     bullets:[
@@ -561,7 +556,7 @@ function card(id){
   const p = projects[id];
   return `<a class="card rv" href="#project/${id}" onclick="go('project','${id}')">
     <div class="cthumb ${p.art}"><div class="quote">"${p.quote}"</div></div>
-    <div class="cmeta">${p.badge?`<span class="badge">${p.badge}</span>`:''}<span>${p.year}</span></div>
+    <div class="cmeta"><span>${p.year}</span></div>
     <h3>${p.title}<span class="arw">&#8599;</span></h3>
   </a>`;
 }
@@ -588,8 +583,8 @@ function renderHome(){
     <div class="hero-media"></div>
     <div class="hero-marquee">
   <div class="hero-marquee-track">
-    <span>OKAEGBU-WALI&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    <span>OKAEGBU-WALI&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>PRAISE OKAEGBU-WALI.&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <span>PRAISE OKAEGBU-WALI.&nbsp;&nbsp;&nbsp;&nbsp;</span>
   </div>
 </div>
     <div class="hero-bottom">
@@ -695,7 +690,7 @@ function renderHome(){
     <div class="wrap">
       <h2 class="display">Let's build something <em>worth shipping</em>.</h2>
       <p>Open to remote AI product design, UX, and creative direction roles and collaborations.</p>
-      <a class="btn-solid" href="mailto:praisehenry52@gmail.com">Get in touch &#8599;</a>
+      <a class="btn-solid" href="#work" onclick="go('work')">See the work &rarr;</a>
     </div>
   </section>`;
 }
@@ -716,7 +711,7 @@ function renderWork(){
     <div class="wrap">
       <h2 class="display">Want the <em>longer</em> version?</h2>
       <p>Happy to walk through any of these in detail, including the parts that did not work first time.</p>
-      <a class="btn-solid" href="mailto:praisehenry52@gmail.com">Start a conversation &#8599;</a>
+      <a class="btn-solid" href="#about" onclick="go('about')">More about me &rarr;</a>
     </div>
   </section>`;
 }
@@ -803,7 +798,7 @@ function renderAbout(){
     <div class="wrap">
       <h2 class="display">Curious how I <em>work</em>?</h2>
       <p>Happy to walk through any project in detail, or just talk shop about AI and design process.</p>
-      <a class="btn-solid" href="mailto:praisehenry52@gmail.com">Send a note &#8599;</a>
+      <a class="btn-solid" href="#blog" onclick="go('blog')">Read my writing &rarr;</a>
     </div>
   </section>`;
 }
@@ -831,6 +826,13 @@ function renderBlog(){
       <div style="margin-top:44px;text-align:center;">
         <a class="btn-ghost" href="https://medium.com/@praise.okaegbu_wali" target="_blank" rel="noopener">Read more on Medium &#8599;</a>
       </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="display">Prefer the <em>short</em> version?</h2>
+      <p>Skip the essays. The resume covers the same ground in less time.</p>
+      <a class="btn-solid" href="#resume" onclick="go('resume')">See the resume &rarr;</a>
     </div>
   </section>`;
 }
@@ -880,7 +882,7 @@ function renderResume(){
     <div class="wrap">
       <h2 class="display">Looking for someone like <em>me</em>?</h2>
       <p>Open to remote AI product design, UX, and creative direction roles.</p>
-      <a class="btn-solid" href="mailto:praisehenry52@gmail.com">Let's talk &#8599;</a>
+      <a class="btn-solid" href="#contact" onclick="go('contact')">Let's talk &rarr;</a>
     </div>
   </section>`;
 }
@@ -906,6 +908,11 @@ function renderContact(){
         <div><div class="k">Medium</div><div class="v"><a href="https://medium.com/@praise.okaegbu_wali" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line);">Read essays &#8599;</a></div></div>
         <div><div class="k">Resume</div><div class="v"><a href="Praise_Okaegbu-Wali_CV.docx" download style="border-bottom:1px solid var(--line);">Download &darr;</a></div></div>
       </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="wrap">
+      <a class="btn-solid" href="mailto:praisehenry52@gmail.com">Let's talk</a>
     </div>
   </section>`;
 }
