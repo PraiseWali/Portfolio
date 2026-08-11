@@ -302,14 +302,9 @@
   .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:start;}
   .about-photo{
     aspect-ratio:4/5;border-radius:3px;overflow:hidden;position:relative;
-    background:linear-gradient(158deg,#12100D 0%,#3C3428 52%,#0A0A0A 100%);
+    background:url('hero.jpg') center / cover no-repeat;
   }
   .about-photo::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(46deg,rgba(242,243,242,0.035) 0 2px,transparent 2px 26px);}
-  .about-photo .ph-note{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;
-    font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,243,242,0.3);
-    border:1px dashed rgba(242,243,242,0.16);padding:9px 15px;
-  }
   .about-copy p{color:var(--text-dim);font-size:16.5px;line-height:1.85;margin-bottom:20px;}
   .about-copy p em{color:var(--text);font-style:italic;}
   .rows{margin-top:8px;}
@@ -597,7 +592,7 @@ function renderHome(){
     <div class="hero-bottom">
       <div class="wrap">
         <div class="hero-loc">Based in Lagos, Nigeria &nbsp;/&nbsp; Working remote, worldwide</div>
-        <div class="hero-role">AI Product Designer<br><span>Creative Direction &amp; Research</span></div>
+        <div class="hero-role">UX Designer<br><span>AI Product Designer</span></div>
       </div>
     </div>
     <div class="scroll-hint">Scroll</div>
@@ -608,8 +603,8 @@ function renderHome(){
       <span class="eyebrow rv">Welcome</span>
       <h1 class="display rv">Hi, I'm Praise. I turn research into things teams can <em>actually build</em>.</h1>
       <div class="body rv">
-        <p>I'm an AI product designer and creative director, nearly three years in, working remotely with a small Australian-led team. I mostly work on products with too many unknowns, too many stakeholders, and not enough structure. That is usually where I'm most useful.</p>
-        <p>I like evidence. I like documentation that survives handoff. I like catching the thing everyone else missed before it becomes code.</p>
+        <p>I'm a UX designer working across AI product design and creative direction, nearly three years in, working remotely with an Australian-led team. I mostly work on products with too many unknowns and not enough structure, sometimes gathering that context directly from stakeholders, other times through close collaboration with my team. That's usually where I'm most useful.</p>
+        <p>I don't just gather research, I build the workflows that turn it into something usable, and I ask the questions that are sometimes uncomfortable but push things forward, the ones that surface a UX blind spot before it costs the team extra time and rework to fix later. That's the part of the work I actually enjoy most: making sure what gets built holds up, because someone asked the harder question early enough to matter.</p>
       </div>
     </div>
   </section>
@@ -623,7 +618,7 @@ function renderHome(){
           <p>Designing how people work alongside AI, and setting the principles and guardrails that keep it useful rather than unpredictable. I build the research foundation products get evaluated against, not just the screens they ship with.</p>
           <div class="pills">
             <span>Research synthesis</span><span>AI behaviour design</span><span>Principles &amp; guardrails</span>
-            <span>Prompt-based prototyping</span><span>Evaluation frameworks</span><span>Figma Make</span><span>NotebookLM</span>
+            <span>Prompt-based prototyping</span><span>Evaluation frameworks</span><span>Figma Make</span><span>NotebookLM</span><span>Claude Design</span><span>Claude Code</span>
           </div>
         </div>
       </div>
@@ -774,18 +769,18 @@ function renderAbout(){
   </section>
   <section style="padding-top:0;">
     <div class="wrap about-grid">
-      <div class="about-photo rv"><div class="ph-note">Add a photo of you<br><span style="opacity:.7">.about-photo background</span></div></div>
+      <div class="about-photo rv"></div>
       <div class="about-copy rv">
         <p>I'm curious about how things work: products, teams, data models, people. That curiosity is how I ended up in UX without a formal programme, and it is still the thing that makes me useful. I came up by doing, which means my instincts are earned rather than taught, and I am deliberately building the vocabulary to match them.</p>
-        <p>Day to day I work remotely with a small Australian-led team, wearing more hats than one title holds: AI product designer, creative director, researcher, and the person who does the last QA pass before something goes live. I turn discovery calls into personas and journey maps, use NotebookLM and Claude to validate findings before they become prompts, prototype in Figma Make, and document closely enough that a development team never has to guess at intent.</p>
-        <p>I'm also the person who tends to catch the thing everyone else missed. A filter with no field behind it. A framing error in how an AI is supposed to behave. An illustration set representing a global audience through one cultural lens. Usually because I have been closest to the research from the beginning.</p>
-        <p>Outside of product work I write UX and life essays on Medium, and I'm slowly turning my LinkedIn back on. I'm also building something on Instagram around lifestyle and hair content, which I am finally treating with the same intent as my design work.</p>
+        <p>Day to day I work remotely with an Australian-led team, wearing more hats than one title holds: AI product designer, creative director, researcher, and the person who does the last QA pass before something goes live. I turn discovery calls into personas and journey maps, use NotebookLM and Claude to validate findings before they become prompts, prototype in Figma Make, and document closely enough that a development team never has to guess at intent.</p>
+        <p>Because I tend to stay closest to the research for longest, I've built a habit of tracing decisions all the way through before they ship: a filter with no field behind it, a framing error in how an AI is supposed to behave, an illustration set representing a global audience through one cultural lens. Catching those has less to do with vigilance and more to do with proximity. I'm usually still holding the thread when everyone else has moved on to the next thing.</p>
+        <p>Outside of product work, I write on Medium, more life writing these days than UX, though the design pieces still show up. I've stepped back from social media for now, to touch grass and actually see the world instead of watching it through a feed. I'm not posting anywhere at the moment, though old lifestyle content and loc-journey videos on Instagram are still finding people; I get messages now and then from people using them to figure out where to start. If I pick anything back up, it'll probably be writing more on Medium before anything else.</p>
         <div class="rows">
           <div><div class="k">Based in</div><div class="v">Lagos, Nigeria. Remote, working across time zones</div></div>
           <div><div class="k">Currently</div><div class="v">Lead UX Designer at Bluevineyard, working on two AI-native products</div></div>
           <div><div class="k">Languages</div><div class="v">English (fluent), French (conversational)</div></div>
           <div><div class="k">Studies</div><div class="v">MSc Information Management (in progress), BSc, plus a lot of self-taught design</div></div>
-          <div><div class="k">Off the clock</div><div class="v">Writing on Medium, strategy-based board games, travel and cross-cultural experiences, hair and lifestyle content</div></div>
+          <div><div class="k">Off the clock</div><div class="v">Scrabble more than chess, if I'm honest, I love playing with words, reading has always been a lifestyle for me. Chess I only picked up last year, meant to destress me, mostly does the opposite. Traveling whenever I can, only made it to Rwanda so far, but the list is long.</div></div>
           <div><div class="k">Also me</div><div class="v">I volunteer design and content skills to Nsonye, helping women aged 18 to 30 move into tech</div></div>
           <div><div class="k">Current obsession</div><div class="v">How AI changes the research-to-prototype pipeline without flattening design judgement</div></div>
         </div>
@@ -811,8 +806,8 @@ function renderBlog(){
   <section class="phero">
     <div class="wrap">
       <span class="eyebrow rv">Writing</span>
-      <h1 class="display rv">Notes on UX, AI, and <em>building things</em>.</h1>
-      <p class="rv">Longer thinking that does not fit inside a case study. Mostly published on Medium, mostly about process, occasionally about life.</p>
+      <h1 class="display rv">Life, work, and everything in <em>between</em>.</h1>
+      <p class="rv">Longer thinking from Medium, mostly life writing these days, sometimes UX and product, always something I actually mean.</p>
     </div>
   </section>
   <section style="padding-top:20px;">
@@ -829,7 +824,6 @@ function renderBlog(){
       <div style="margin-top:44px;text-align:center;">
         <a class="btn-ghost" href="https://medium.com/@praise.okaegbu_wali" target="_blank" rel="noopener">Read more on Medium &#8599;</a>
       </div>
-      <div class="note">These three cards are placeholders. Send me your Medium links and I will drop in the real titles, tags, and summaries.</div>
     </div>
   </section>`;
 }
